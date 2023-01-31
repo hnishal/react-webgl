@@ -1,6 +1,6 @@
 import './App.css';
-import React, { useState, useEffect, Fragment } from "react";
-
+import React, { useState, useEffect } from "react";
+import { BiFullscreen } from "react-icons/bi";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
@@ -17,7 +17,8 @@ function App() {
   ]);
 
   function handleClickEnterFullscreen() {
-    requestFullscreen(true);
+    if (isLoaded === true)
+      requestFullscreen(true);
   }
 
   useEffect(() => {
@@ -32,23 +33,18 @@ function App() {
     };
   });
 
-  // We'll round the loading progression to a whole number to represent the
-  // percentage of the Unity Application that has loaded.
   const loadingPercentage = Math.round(loadingProgression * 100);
 
   return (
-    <Fragment className="container">
+    <div className='container'>
       {isLoaded === false && (
-        // We'll conditionally render the loading overlay if the Unity
-        // Application is not loaded.
         <div className="loading-overlay">
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
       )}
-      <button className="full-screen" onClick={handleClickEnterFullscreen}>Enter Fullscreen</button>
       <Unity className="unity" unityProvider={unityProvider} style={{ width: windowSize[0], height: windowSize[1] }} />
-
-    </Fragment>
+      <button className="full-screen" onClick={handleClickEnterFullscreen}><BiFullscreen /></button>
+    </div>
   );
 }
 

@@ -1,12 +1,14 @@
+.container{
+  position: absolute;
+}
+
 .loading-overlay {
-  /* We'll render the overlay on top of the Unity Application. */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: grey;
-  /* We'll set the following Flex properties in order to center the text. */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,4 +16,16 @@
 .unity{
   width: 100%;
   height: 100%;
+}
+.full-screen{
+  height: 22px;
+    position: absolute;
+    display: flex;
+    text-decoration:none;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 0 0 0 0;
+    width: 22px;
+    border-radius : 3px;
 }
