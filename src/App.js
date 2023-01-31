@@ -5,10 +5,10 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: "Build/WegGLbuild.loader.js",
-    dataUrl: "Build/WegGLbuild.data",
-    frameworkUrl: "Build/WegGLbuild.framework.js",
-    codeUrl: "Build/WegGLbuild.wasm",
+    loaderUrl: "wBuild/WegGLbuild.loader.js",
+    dataUrl: "wBuild/WegGLbuild.data",
+    frameworkUrl: "wBuild/WegGLbuild.framework.js",
+    codeUrl: "wBuild/WegGLbuild.wasm",
   });
 
   // We'll round the loading progression to a whole number to represent the
