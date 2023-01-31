@@ -35,7 +35,6 @@ function App() {
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
-
   return (
     <div className='container'>
       {isLoaded === false && (
